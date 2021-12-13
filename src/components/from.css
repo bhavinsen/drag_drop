@@ -1,0 +1,28 @@
+
+.Main-app{
+    padding: 20px 0px;
+}
+.Main-app label{
+    margin-right: 5px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+.Main-app input{
+    height: 20px;
+    width: 250px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    padding: 3px 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.Main-app button{
+    color: #fff;
+    background-color: #0d6efd;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
