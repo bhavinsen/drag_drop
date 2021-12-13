@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { DataContext } from "./context";
-import '../drag_drop/list.css';
+import './list.css';
 
 
 const getItemStyle = (isDragging, draggableStyle) => ({
@@ -21,9 +21,8 @@ const getListStyle = isDraggingOver => ({
     padding: 0,
 });
 
-export default function ToDoList() {
+export default function List() {
     const [data, setData] = useContext(DataContext);
-    const [isSelect, setIsSelect] = useState(false);
     const [textvalue, setTexttvalue] = useState();
 
     const deleteItem = (id) => {
@@ -47,7 +46,7 @@ export default function ToDoList() {
     return (
         <div className="list-app">
             <div className="App">
-                <div onClick={() => setIsSelect(true)}>
+                <div>
                     <DragDropContext onDragEnd={handleEnd}>
                         <Droppable droppableId="to-dos">
                             {(provided, snapshot) => (
@@ -66,18 +65,15 @@ export default function ToDoList() {
                                                         provided.draggableProps.style
                                                     )}
                                                 >
-                                                    {isSelect ? (
-                                                        <input
-                                                            style={{ width: 120 }}
-                                                            type="text"
-                                                            onChange={(e) => handleChange(e)}
-                                                            name="add"
-                                                            defaultValue={item.name}
-                                                        />
-                                                    ) : (
-                                                        console.log("abc"),
-                                                        <input type="text" value={item.name} name="add" onChange={(e) => handleChange(e)} readOnly />
-                                                    )}
+
+                                                    <input
+                                                        style={{ width: 120 }}
+                                                        type="text"
+                                                        onChange={(e) => handleChange(e)}
+                                                        name="add"
+                                                        defaultValue={item.name}
+                                                    />
+
                                                     <button onClick={() => deleteItem(item.id)}>Delete</button>
                                                 </div>
                                             )}

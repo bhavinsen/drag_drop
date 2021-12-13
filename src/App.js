@@ -1,14 +1,14 @@
 import './App.css';
-import { DataList } from './drag_drop/context';
-import Form from './drag_drop/form';
-import ToDoList from './drag_drop/list';
+import { DataList } from './components/context';
+import Form from './components/form';
+import List from './components/list';
 function App() {
   return (
     <div className="App">
       <div className="mainWrapper">
         <DataList>
           <Form />
-          <ToDoList />
+          <List />
         </DataList>
       </div>
     </div>

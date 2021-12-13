@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { nanoid } from "nanoid";
 import { DataContext } from "./context";
-import '../drag_drop/from.css';
+import './from.css';
 
 export default function Form() {
     const [data, setData] = useContext(DataContext);
